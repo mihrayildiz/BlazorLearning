@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorLearaning.Server.Data\BlazorLearaning.Server.Data.csproj" />
+    <ProjectReference Include="..\Client\BlazorLearaning.Client.csproj" />
+    <ProjectReference Include="..\Shared\BlazorLearaning.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

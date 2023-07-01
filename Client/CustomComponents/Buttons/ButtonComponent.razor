@@ -1,0 +1,25 @@
+﻿@inherits BaseButtonComponent   
+
+@*HTML kısımlrı tasarlandı.BaseButtonComponent metodlarını kullanması içie inherits edildi.*@
+
+<button 
+    class="btn@(IsSmall ? " btn-sm":"") btn@(IsOutline ? "-outline":"")-@Color" 
+        type="submit"
+        disabled="@IsBusy"
+        onclick="@OnClick"
+        title="@ToolTypeStr">
+    <span class="fa fa-@Icon fa-fw"></span>
+    
+   @if (IsBusy)
+    {
+    <span class="spinner border  spinner-border-sm mr-1"> </span>
+
+    }
+    @Caption
+
+</button>
+
+
+
+
+

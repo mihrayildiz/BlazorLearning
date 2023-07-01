@@ -1,0 +1,59 @@
+﻿@page "/buttontest" 
+@page "/btntest"
+
+
+
+
+@*href alanına buttontest ve btntest dediğimde buraya gelecek ve bunları yazacak*@
+    
+<h3>Button Testi  Sayfası</h3>
+
+
+<div class="form-group">
+
+
+    <div class="container">
+        <div class="btn-toolbar">
+
+
+            <CustomEditButtonComponent Caption="ShowMessage" OnClick="changeTitle" />
+
+            <CustomEditButtonComponent Caption="Edit Caption" OnClick="@showConfirmation" Color="danger" Icon="pencil" IsSmall="false" />
+
+
+
+            <AddNewButtonComponent/>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+@code {
+
+
+    [CascadingParameter]
+    IModalService Modal { get; set; } 
+
+    [Inject]
+    ModalManager ModalManager { get; set; }
+
+
+    private String title = "";
+
+    private async Task changeTitle()
+    {
+        await ModalManager.ShowMessageAsync("Show Message Title", "Record deleted", 3000); //ModalManager altında ki ShowMessageAsync fonksiyon ile değerleri verildi.3 saniye sonra otomatik olarak kapansın.
+    }
+
+    async Task showConfirmation()
+    {
+        var res = await ModalManager.ConfirmationAsync("Confirmations", "Are you sure that it will be deleted?");
+
+        if (res) title = "Yes just clicked"; else title = "No just clicked";  //basılan butona göre title güncellenecek. ys butonuna basılırsa Yes just clicked yazar.
+    }
+
+  
+}

@@ -1,0 +1,14 @@
+﻿
+<CascadingBlazoredModal>
+
+    <Router AppAssembly="@typeof(Program).Assembly">  @*default olarak ilk program.cs nin çalışacağını bildiriyor.*@
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">  @*sayfa bulunamadıysa hata veriyor.*@
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingBlazoredModal>

@@ -1,0 +1,39 @@
+﻿
+
+@code {
+
+
+
+    [Parameter]
+    public string Caption { get; set; }   //ButtonText olarak parametre verildi.TestBtrazor da ButtonText veirildiğinde değeri burada setlenir.
+
+    [Parameter]
+    public string Color { get; set; }
+
+    [Parameter]
+    public string Icon { get; set; }
+
+    [Parameter]
+    public string ToolTypeStr { get; set; }
+
+    [Parameter]
+    public bool  IsSmall { get; set; }
+
+    [Parameter]
+    public bool IsOutline { get; set; }
+
+    [Parameter]
+    public bool IsBusy { get; set; }  //buttona basıldı mı yani nuton meşgul mü
+
+    [Parameter]
+    public string IsBusyCaption { get; set; }  //buttın mşgu ise yazılacak bilgi.
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+
+
+
+
+
+}
